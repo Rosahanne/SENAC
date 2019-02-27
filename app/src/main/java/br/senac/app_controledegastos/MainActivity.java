@@ -11,12 +11,13 @@ import android.widget.ListView;
 
 import java.util.List;
 
-import br.senac.app_controledegastos.DAO.CustosDAO;
+import br.senac.app_controledegastos.DAO.GastoDAO;
 
 public class MainActivity extends AppCompatActivity {
 
     private ListView listViewGastos;
     private FloatingActionButton fabAddGasto;
+    public static final String MAIN_GASTO = "main_gasto";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,17 +30,26 @@ public class MainActivity extends AppCompatActivity {
         fabAddGasto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Cadastro.class);
+                Intent intent = new Intent(MainActivity.this, CadGasto.class);
                 startActivity(intent);
             }
         });
 
+        listViewGastos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MainActivity.this, EditGasto.class);
+                CadGasto gasto = (CadGasto)parent.getItemAtPosition(position);
+                intent.putExtra(MAIN_GASTO, CadGasto);
+                startActivity(intent);
+         }});
+
         @Override
         protected void onResume() {
             super.onResume();
-            CustosDAO custosDAO = new CustosDAO(this);
-            List<Gasto> gasto = CustosDAO.listaTodosGastos();
-            ArrayAdapter<Gasto> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, gasto);
+            GastoDAO custosDAO = new GastoDAO(this);
+            List<CadGasto> gasto = GastoDAO.listaTodosGastos();
+            ArrayAdapter<CadGasto> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, gasto);
             listViewGastos.setAdapter(adapter);
         }
 

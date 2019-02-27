@@ -9,6 +9,7 @@ public class Gasto {
     private EditText editData;
     private EditText editDescricao;
     private EditText editCategoria;
+    private
     private Button btnEnviar;
 
     public Gasto(long idGasto, EditText editData, EditText editDescricao, EditText editCategoria, Button btnEnviar) {
@@ -30,19 +31,39 @@ public class Gasto {
         return idGasto;
     }
 
+    public void setIdGasto(long idGasto) {
+        this.idGasto = idGasto;
+    }
+
     public EditText getEditData() {
         return editData;
+    }
+
+    public void setEditData(EditText editData) {
+        this.editData = editData;
     }
 
     public EditText getEditDescricao() {
         return editDescricao;
     }
 
+    public void setEditDescricao(EditText editDescricao) {
+        this.editDescricao = editDescricao;
+    }
+
     public EditText getEditCategoria() {
         return editCategoria;
     }
 
+    public void setEditCategoria(EditText editCategoria) {
+        this.editCategoria = editCategoria;
+    }
+
     public Button getBtnEnviar() {
         return btnEnviar;
+    }
+
+    public void setBtnEnviar(Button btnEnviar) {
+        this.btnEnviar = btnEnviar;
     }
 }
