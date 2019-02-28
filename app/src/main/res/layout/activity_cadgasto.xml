@@ -7,9 +7,9 @@
     tools:context=".CadGasto">
 
     <TextView
-        android:id="@+id/textView_titCadGasto"
-        android:layout_width="320dp"
-        android:layout_height="44dp"
+        android:id="@+id/tCadGasto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -18,73 +18,78 @@
         android:layout_marginBottom="8dp"
         android:text="@string/TitCadGastos"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.042"
-        tools:text="Cadastro de Gastos" />
+        app:layout_constraintVertical_bias="0.142" />
 
     <EditText
-        android:id="@+id/cadAlunoTxtData"
+        android:id="@+id/dataCadGasto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:ems="10"
         android:hint="@string/data"
         android:inputType="date"
-        app:layout_constraintEnd_toEndOf="@+id/textView_titCadGasto"
+        app:layout_constraintEnd_toEndOf="@+id/tCadGasto"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="@+id/textView_titCadGasto"
-        app:layout_constraintTop_toBottomOf="@+id/textView_titCadGasto" />
+        app:layout_constraintStart_toStartOf="@+id/tCadGasto"
+        app:layout_constraintTop_toBottomOf="@+id/tCadGasto" />
 
     <EditText
-        android:id="@+id/cadAlunoTxtDescricao"
+        android:id="@+id/descricaoCadGasto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:ems="10"
         android:hint="@string/descricao"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/cadAlunoTxtData"
+        app:layout_constraintEnd_toEndOf="@+id/dataCadGasto"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/cadAlunoTxtData"
-        app:layout_constraintTop_toBottomOf="@+id/cadAlunoTxtData" />
+        app:layout_constraintStart_toStartOf="@+id/dataCadGasto"
+        app:layout_constraintTop_toBottomOf="@+id/dataCadGasto" />
 
     <EditText
-        android:id="@+id/cadAlunoTxtCategoria"
+        android:id="@+id/categoriaCadGasto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="@string/categoria"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/cadAlunoTxtDescricao"
+        app:layout_constraintEnd_toEndOf="@+id/descricaoCadGasto"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/cadAlunoTxtDescricao"
-        app:layout_constraintTop_toBottomOf="@+id/cadAlunoTxtDescricao" />
+        app:layout_constraintStart_toStartOf="@+id/descricaoCadGasto"
+        app:layout_constraintTop_toBottomOf="@+id/descricaoCadGasto" />
 
     <EditText
-        android:id="@+id/cadAlunoTxtValor"
+        android:id="@+id/valorCadGasto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="@string/valor"
         android:inputType="number"
-        app:layout_constraintEnd_toEndOf="@+id/cadAlunoTxtCategoria"
+        app:layout_constraintEnd_toEndOf="@+id/categoriaCadGasto"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/cadAlunoTxtCategoria"
-        app:layout_constraintTop_toBottomOf="@+id/cadAlunoTxtCategoria" />
+        app:layout_constraintStart_toStartOf="@+id/categoriaCadGasto"
+        app:layout_constraintTop_toBottomOf="@+id/categoriaCadGasto" />
 
     <Button
         android:id="@+id/btnCad_Enviar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="136dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="128dp"
         android:text="Enviar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/cadAlunoTxtValor"
-        app:layout_constraintStart_toStartOf="@+id/cadAlunoTxtValor" />
+        app:layout_constraintEnd_toEndOf="@+id/valorCadGasto"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="@+id/valorCadGasto"
+        app:layout_constraintTop_toBottomOf="@+id/valorCadGasto"
+        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>

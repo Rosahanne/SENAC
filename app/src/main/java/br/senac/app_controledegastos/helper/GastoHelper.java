@@ -2,8 +2,8 @@ package br.senac.app_controledegastos.helper;
 
 import android.app.Activity;
 import android.widget.EditText;
-
 import br.senac.app_controledegastos.CadGasto;
+import br.senac.app_controledegastos.EditGasto;
 import br.senac.app_controledegastos.Model.Gasto;
 import br.senac.app_controledegastos.R;
 
@@ -20,14 +20,22 @@ public class GastoHelper {
         carregaCampos(activity);
     }
 
+    public void carregaCampos(CadGasto activity) {
+        editData = activity.findViewById(R.id.dataCadGasto);
+        editDescricao = activity.findViewById(R.id.descricaoCadGasto);
+        editCategoria = activity.findViewById(R.id.categoriaCadGasto);
+        editValor = activity.findViewById(R.id.valorCadGasto);
+    }
 
+    public GastoHelper(EditGasto activity) {
+        carregaCampos(activity);
+    }
 
-    public void carregaCampos(Activity activity) {
-        editData = activity.findViewById(R.id.cadAlunoTxtData);
-        editDescricao = activity.findViewById(R.id.cadAlunoTxtDescricao);
-        editCategoria = activity.findViewById(R.id.cadAlunoTxtCategoria);
-        editValor = activity.findViewById(R.id.cadAlunoTxtValor);
-
+    public void carregaCampos(EditGasto activity) {
+        editData = activity.findViewById(R.id.dataEditGasto);
+        editDescricao = activity.findViewById(R.id.descricaoEditGasto);
+        editCategoria = activity.findViewById(R.id.categoriaEditGasto);
+        editValor = activity.findViewById(R.id.valorEditGasto);
     }
 
     public Gasto getGasto() {
@@ -44,7 +52,9 @@ public class GastoHelper {
         editData.setText(gasto.getData());
         editDescricao.setText(gasto.getDescricao());
         editCategoria.setText(gasto.getCategoria());
-        editValor.setText(gasto.getValor());
+        editValor.setText(String.valueOf(gasto.getValor()));
+
+
 
     }
 

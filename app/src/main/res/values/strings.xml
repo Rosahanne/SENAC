@@ -1,9 +1,14 @@
 <resources>
-    <string name="app_name">ControleGastos</string>
-    <string name="TitCadGastos" />
+    <string name="app_name">Controle de Gastos</string>
+    <string name="TitCadGastos">Cadastro de gastos</string>
+    <string name="TitEditGastro">Editar gasto</string>
     <string name="title_activity_edi_gastro">ediGastro</string>
     <string name="data">Data</string>
     <string name="descricao">Descrição</string>
     <string name="categoria">Categoria</string>
     <string name="valor">Valor</string>
+    <string name="edData">Data</string>
+    <string name="edDescricao">Descrição</string>
+    <string name="edCategoria">Categoria</string>
+    <string name="edValor">Valor</string>
 </resources>

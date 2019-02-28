@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         listViewGastos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(MainActivity.this, CadGasto.class);
+                Intent intent = new Intent(MainActivity.this, EditGasto.class);
                 Gasto gasto = (Gasto)parent.getItemAtPosition(position);
                 intent.putExtra(MAIN_GASTO, gasto);
                 startActivity(intent);
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onResume(){
             super.onResume();
             GastoDAO gastoDAO = new GastoDAO(this);
-            List<Gasto> gasto = GastoDAO.listaTodosGastos();
+            List<Gasto> gasto = gastoDAO.listaTodosGastos();
             ArrayAdapter<Gasto> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, gasto);
             listViewGastos.setAdapter(adapter);
         }

@@ -4,62 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".editGasto">
+    tools:context=".EditGasto">
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/dataEditGasto"
         android:layout_width="206dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:ems="10"
-        android:hint="@string/data"
+        android:hint="@string/edData"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintEnd_toEndOf="@+id/tEdGasto"
+        app:layout_constraintStart_toStartOf="@+id/tEdGasto"
+        app:layout_constraintTop_toBottomOf="@+id/tEdGasto" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/descricaoEditGasto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="@string/descricao"
+        android:hint="@string/edDescricao"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/editText"
-        app:layout_constraintStart_toStartOf="@+id/editText"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintEnd_toEndOf="@+id/dataEditGasto"
+        app:layout_constraintStart_toStartOf="@+id/dataEditGasto"
+        app:layout_constraintTop_toBottomOf="@+id/dataEditGasto" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/categoriaEditGasto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="@string/categoria"
+        android:hint="@string/edCategoria"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/editText2"
-        app:layout_constraintStart_toStartOf="@+id/editText2"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintEnd_toEndOf="@+id/descricaoEditGasto"
+        app:layout_constraintStart_toStartOf="@+id/descricaoEditGasto"
+        app:layout_constraintTop_toBottomOf="@+id/descricaoEditGasto" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/valorEditGasto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
-        android:hint="@string/valor"
+        android:hint="@string/edValor"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/editText3"
+        app:layout_constraintEnd_toEndOf="@+id/categoriaEditGasto"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/editText3"
-        app:layout_constraintTop_toBottomOf="@+id/editText3"
+        app:layout_constraintStart_toStartOf="@+id/categoriaEditGasto"
+        app:layout_constraintTop_toBottomOf="@+id/categoriaEditGasto"
         app:layout_constraintVertical_bias="0.038" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tEdGasto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -67,9 +67,21 @@
         android:layout_marginTop="72dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:text="@string/TitEditGastro"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Editar dados" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnEdit_Enviar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="Enviar"
+        app:layout_constraintEnd_toEndOf="@+id/valorEditGasto"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/valorEditGasto"
+        app:layout_constraintTop_toBottomOf="@+id/valorEditGasto" />
 </android.support.constraint.ConstraintLayout>

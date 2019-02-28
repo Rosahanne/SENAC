@@ -11,22 +11,20 @@ import br.senac.app_controledegastos.DAO.GastoDAO;
 import br.senac.app_controledegastos.Model.Gasto;
 import br.senac.app_controledegastos.helper.GastoHelper;
 
-public class CadGasto extends AppCompatActivity {
+public class EditGasto extends AppCompatActivity {
 
     private GastoHelper helper;
     private GastoDAO gastoDAO;
     private Button btnCadEnviar;
-    private TextView titCadGastro;
-
-
+    private TextView titEditGastro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadgasto);
+        setContentView(R.layout.activity_edit_gasto);
 
-        titCadGastro = findViewById(R.id. tCadGasto);
-        btnCadEnviar = findViewById(R.id. btnCad_Enviar);
+        titEditGastro = findViewById(R.id.tEdGasto);
+        btnCadEnviar = findViewById(R.id. btnEdit_Enviar);
         helper = new GastoHelper(this);
         gastoDAO = new GastoDAO(this);
 
@@ -36,13 +34,11 @@ public class CadGasto extends AppCompatActivity {
                 Gasto gasto = helper.getGasto();
                 gastoDAO.inserir(gasto);
                 if (gastoDAO.inserir(gasto) == -1) {
-                    Toast.makeText(CadGasto.this,"Cadastro com sucesso", Toast.LENGTH_LONG).show();
+                    Toast.makeText(EditGasto.this,"Cadastro editado com sucesso", Toast.LENGTH_LONG).show();
                 } else {
                     finish();
                 }
             }
         });
-
-
     }
 }
