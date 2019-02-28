@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,10 +66,10 @@ public class GastoDAO extends SQLiteOpenHelper {
             String categoria = cursor.getString(cursor.getColumnIndex("categoria"));
             float valor = cursor.getFloat(cursor.getColumnIndex("valor"));
 
-            Gasto aluno = new Gasto(idGasto, data, descricao, categoria, valor);
-            listaGastos.add(Gasto);
+            Gasto gasto = new Gasto(idGasto, data, descricao, categoria, valor);
+            listaGastos.add(gasto);
         }
-        return listaGasos;
+        return listaGastos;
     }
 
     public int editar(Gasto gasto) {
@@ -96,4 +95,4 @@ public class GastoDAO extends SQLiteOpenHelper {
     }
 }
 
-}
+

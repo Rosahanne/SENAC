@@ -26,51 +26,65 @@
         tools:text="Cadastro de Gastos" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/cadAlunoTxtData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="36dp"
         android:ems="10"
+        android:hint="@string/data"
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="@+id/textView_titCadGasto"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="@+id/textView_titCadGasto"
         app:layout_constraintTop_toBottomOf="@+id/textView_titCadGasto" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/cadAlunoTxtDescricao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:ems="10"
+        android:hint="@string/descricao"
         android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintEnd_toEndOf="@+id/editText"
+        app:layout_constraintEnd_toEndOf="@+id/cadAlunoTxtData"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editText"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintStart_toStartOf="@+id/cadAlunoTxtData"
+        app:layout_constraintTop_toBottomOf="@+id/cadAlunoTxtData" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/cadAlunoTxtCategoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:ems="10"
+        android:hint="@string/categoria"
         android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintEnd_toEndOf="@+id/editText2"
+        app:layout_constraintEnd_toEndOf="@+id/cadAlunoTxtDescricao"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editText2"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintStart_toStartOf="@+id/cadAlunoTxtDescricao"
+        app:layout_constraintTop_toBottomOf="@+id/cadAlunoTxtDescricao" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/cadAlunoTxtValor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:ems="10"
+        android:hint="@string/valor"
         android:inputType="number"
-        app:layout_constraintEnd_toEndOf="@+id/editText3"
+        app:layout_constraintEnd_toEndOf="@+id/cadAlunoTxtCategoria"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editText3"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        app:layout_constraintStart_toStartOf="@+id/cadAlunoTxtCategoria"
+        app:layout_constraintTop_toBottomOf="@+id/cadAlunoTxtCategoria" />
+
+    <Button
+        android:id="@+id/btnCad_Enviar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="136dp"
+        android:text="Enviar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/cadAlunoTxtValor"
+        app:layout_constraintStart_toStartOf="@+id/cadAlunoTxtValor" />
+
 </android.support.constraint.ConstraintLayout>

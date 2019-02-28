@@ -1,69 +1,40 @@
 package br.senac.app_controledegastos.Model;
 
-import android.widget.Button;
-import android.widget.EditText;
+import java.io.Serializable;
 
-public class Gasto {
+public class Gasto implements Serializable {
 
     private long idGasto;
-    private EditText editData;
-    private EditText editDescricao;
-    private EditText editCategoria;
-    private
-    private Button btnEnviar;
+    private String data;
+    private String descricao;
+    private String categoria;
+    private double valor;
 
-    public Gasto(long idGasto, EditText editData, EditText editDescricao, EditText editCategoria, Button btnEnviar) {
+    public Gasto(long idGasto, String data, String descricao, String categoria, double valor) {
         this.idGasto = idGasto;
-        this.editData = editData;
-        this.editDescricao = editDescricao;
-        this.editCategoria = editCategoria;
-        this.btnEnviar = btnEnviar;
-    }
-
-    public Gasto(EditText editData, EditText editDescricao, EditText editCategoria, Button btnEnviar) {
-        this.editData = editData;
-        this.editDescricao = editDescricao;
-        this.editCategoria = editCategoria;
-        this.btnEnviar = btnEnviar;
+        this.data = data;
+        this.descricao = descricao;
+        this.categoria = categoria;
+        this.valor = valor;
     }
 
     public long getIdGasto() {
         return idGasto;
     }
 
-    public void setIdGasto(long idGasto) {
-        this.idGasto = idGasto;
+    public String getData() {
+        return data;
     }
 
-    public EditText getEditData() {
-        return editData;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setEditData(EditText editData) {
-        this.editData = editData;
+    public String getCategoria() {
+        return categoria;
     }
 
-    public EditText getEditDescricao() {
-        return editDescricao;
-    }
-
-    public void setEditDescricao(EditText editDescricao) {
-        this.editDescricao = editDescricao;
-    }
-
-    public EditText getEditCategoria() {
-        return editCategoria;
-    }
-
-    public void setEditCategoria(EditText editCategoria) {
-        this.editCategoria = editCategoria;
-    }
-
-    public Button getBtnEnviar() {
-        return btnEnviar;
-    }
-
-    public void setBtnEnviar(Button btnEnviar) {
-        this.btnEnviar = btnEnviar;
+    public double getValor() {
+        return valor;
     }
 }

@@ -14,7 +14,7 @@ public class CadGasto extends AppCompatActivity {
 
     private GastoHelper helper;
     private GastoDAO gastoDAO;
-    private Button btnCadGasto;
+    private Button btnCadEnviar;
 
 
     @Override
@@ -22,14 +22,14 @@ public class CadGasto extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadgasto);
 
-        btnCadGasto = findViewById(R.id. btnCGasto);
+        btnCadEnviar = findViewById(R.id. btnCad_Enviar);
         helper = new GastoHelper(this);
         gastoDAO = new GastoDAO(this);
 
-        btnCadGasto.setOnClickListener(new View.OnClickListener() {
+        btnCadEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Gasto gasto = helper.getAluno();
+                Gasto gasto = helper.getGasto();
                 gastoDAO.inserir(gasto);
                 if (gastoDAO.inserir(gasto) == -1) {
                     Toast.makeText(CadGasto.this,"Cadastro com sucesso", Toast.LENGTH_LONG).show();

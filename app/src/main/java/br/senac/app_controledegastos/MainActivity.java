@@ -12,6 +12,7 @@ import android.widget.ListView;
 import java.util.List;
 
 import br.senac.app_controledegastos.DAO.GastoDAO;
+import br.senac.app_controledegastos.Model.Gasto;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,22 +39,24 @@ public class MainActivity extends AppCompatActivity {
         listViewGastos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(MainActivity.this, EditGasto.class);
-                CadGasto gasto = (CadGasto)parent.getItemAtPosition(position);
-                intent.putExtra(MAIN_GASTO, CadGasto);
+                Intent intent = new Intent(MainActivity.this, CadGasto.class);
+                Gasto gasto = (Gasto)parent.getItemAtPosition(position);
+                intent.putExtra(MAIN_GASTO, gasto);
                 startActivity(intent);
-         }});
+            }
+        });
+     }
 
         @Override
-        protected void onResume() {
+        protected void onResume(){
             super.onResume();
-            GastoDAO custosDAO = new GastoDAO(this);
-            List<CadGasto> gasto = GastoDAO.listaTodosGastos();
-            ArrayAdapter<CadGasto> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, gasto);
+            GastoDAO gastoDAO = new GastoDAO(this);
+            List<Gasto> gasto = GastoDAO.listaTodosGastos();
+            ArrayAdapter<Gasto> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, gasto);
             listViewGastos.setAdapter(adapter);
         }
 
 
 
-    }
+
 }

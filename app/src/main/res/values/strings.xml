@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">ControleGastos</string>
     <string name="TitCadGastos" />
+    <string name="title_activity_edi_gastro">ediGastro</string>
+    <string name="data">Data</string>
+    <string name="descricao">Descrição</string>
+    <string name="categoria">Categoria</string>
+    <string name="valor">Valor</string>
 </resources>
