@@ -36,7 +36,7 @@ public class CadGasto extends AppCompatActivity {
                 Gasto gasto = helper.getGasto();
                 gastoDAO.inserir(gasto);
                 if (gastoDAO.inserir(gasto) == -1) {
-                    Toast.makeText(CadGasto.this,"Cadastro com sucesso", Toast.LENGTH_LONG).show();
+                    Toast.makeText(CadGasto.this,"Não funcionou", Toast.LENGTH_LONG).show();
                 } else {
                     finish();
                 }

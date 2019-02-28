@@ -18,6 +18,13 @@ public class Gasto implements Serializable {
         this.valor = valor;
     }
 
+    public Gasto(String data, String descricao, String categoria, double valor) {
+        this.data = data;
+        this.descricao = descricao;
+        this.categoria = categoria;
+        this.valor = valor;
+    }
+
     public long getIdGasto() {
         return idGasto;
     }

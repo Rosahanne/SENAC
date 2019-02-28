@@ -44,7 +44,7 @@ public class GastoHelper {
         String categoria = editCategoria.getText().toString();
         Double valor = Double.parseDouble(editValor.getText().toString());
 
-        return new Gasto(gasto.getIdGasto(), data, descricao, categoria, valor);
+        return new Gasto(data, descricao, categoria, valor);
     }
 
     public void carregaCampos(Gasto gasto) {

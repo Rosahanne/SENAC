@@ -80,6 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:text="Enviar"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="@+id/valorEditGasto"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/valorEditGasto"

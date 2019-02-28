@@ -8,9 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
 import java.util.List;
-
 import br.senac.app_controledegastos.DAO.GastoDAO;
 import br.senac.app_controledegastos.Model.Gasto;
 
