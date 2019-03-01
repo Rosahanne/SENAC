@@ -44,4 +44,14 @@ public class Gasto implements Serializable {
     public double getValor() {
         return valor;
     }
+
+    public void setIdGasto(long idGasto) {this.idGasto = idGasto;}
+
+    public void setData(String data) {this.data = data;}
+
+    public void setDescricao(String descricao) {this.descricao = descricao;}
+
+    public void setCategoria(String categoria) {this.categoria = categoria;}
+
+    public void setValor(double valor) {this.valor = valor;}
 }

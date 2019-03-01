@@ -35,7 +35,6 @@ public class GastoDAO extends SQLiteOpenHelper {
     }
 
     public long inserir(Gasto gasto) {
-
         //Inserir registros com rocedimento de segureança
         ContentValues dados = getContentValues(gasto);
         SQLiteDatabase db = getWritableDatabase();
@@ -45,10 +44,10 @@ public class GastoDAO extends SQLiteOpenHelper {
 
     private ContentValues getContentValues(Gasto gasto) {
         ContentValues dados = new ContentValues();
-        dados.put("Data", gasto.getData());
-        dados.put("Descrição", gasto.getDescricao());
-        dados.put("Categoria", gasto.getCategoria());
-        dados.put("Valor", gasto.getValor());
+        dados.put("data", gasto.getData());
+        dados.put("descricao", gasto.getDescricao());
+        dados.put("categoria", gasto.getCategoria());
+        dados.put("valor", gasto.getValor());
         return dados;
     }
 
