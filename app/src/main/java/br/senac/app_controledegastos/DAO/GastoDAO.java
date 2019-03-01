@@ -38,9 +38,7 @@ public class GastoDAO extends SQLiteOpenHelper {
         //Inserir registros com rocedimento de segureança
         ContentValues dados = getContentValues(gasto);
         SQLiteDatabase db = getWritableDatabase();
-        return db.insert("Gasto", null, dados);
-
-    }
+        return db.insert("Gasto", null, dados);}
 
     private ContentValues getContentValues(Gasto gasto) {
         ContentValues dados = new ContentValues();

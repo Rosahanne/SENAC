@@ -53,9 +53,6 @@ public class GastoHelper {
         editDescricao.setText(gasto.getDescricao());
         editCategoria.setText(gasto.getCategoria());
         editValor.setText(String.valueOf(gasto.getValor()));
-
-
-
     }
 
 }
