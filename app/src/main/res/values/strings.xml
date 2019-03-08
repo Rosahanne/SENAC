@@ -13,11 +13,7 @@
     <string name="edCategoria">Edite a categoria</string>
     <string name="edValor">Edite o valor</string>
     <string name="btnEdit">Editar</string>
-    <string name="telaMenu">Selecione a opção</string>
-    <string name="cadDados">Cadastrar gasto</string>
-    <string name="edDados">Editar dados</string>
-    <string name="verdados">Visualizar lista</string>
-    <string name="excDados">Excluir gasto</string>
-    <string name="excGasto">Excluir</string>
+    <string name="btnExc">Excluir</string>
+
 
 </resources>

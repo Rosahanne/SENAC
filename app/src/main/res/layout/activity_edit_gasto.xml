@@ -95,9 +95,9 @@
         android:layout_marginTop="44dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="@string/excGasto"
+        android:text="@string/btnExc"
         app:layout_constraintEnd_toStartOf="@+id/btnEdit"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/valorEditGasto"
         app:layout_constraintTop_toBottomOf="@+id/valorEditGasto" />
 </android.support.constraint.ConstraintLayout>
