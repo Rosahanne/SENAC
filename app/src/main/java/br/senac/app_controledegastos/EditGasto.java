@@ -3,6 +3,7 @@ package br.senac.app_controledegastos;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,9 +14,11 @@ import br.senac.app_controledegastos.helper.GastoHelper;
 
 public class EditGasto extends AppCompatActivity {
 
+    public static final double LINHA_AFETADA = 1;
     private GastoHelper helper;
     private GastoDAO gastoDAO;
     private Button btnEditar;
+    private Button btnExcluir;
     private TextView titEditGastro;
 
     @Override
@@ -25,6 +28,7 @@ public class EditGasto extends AppCompatActivity {
 
         titEditGastro = findViewById(R.id.tEdGasto);
         btnEditar = findViewById(R.id. btnEdit);
+        btnExcluir = findViewById(R.id.btnExc);
         helper = new GastoHelper(this);
         gastoDAO = new GastoDAO(this);
 
@@ -46,5 +50,41 @@ public class EditGasto extends AppCompatActivity {
                 }
             }
         });
+
+        btnExcluir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Gasto gasto = helper.getGasto();
+
+                if (gastoDAO.deletar(gasto.getIdGasto()) == LINHA_AFETADA) {
+                    Toast.makeText(EditGasto.this,"Funcionou!", Toast.LENGTH_LONG).show();
+                    finish();
+                } else {
+                    Toast.makeText(EditGasto.this,"Não funcionou!", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        Intent intent;
+
+        switch (item.getItemId()) {
+            case R.id.menu_cadastrar:
+                intent = new Intent(this, CadGasto.class);
+                startActivity(intent);
+                return true;
+
+            case R.id.menu_listar:
+                intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                return true;
+
+            default:
+                Toast.makeText(this, "Houve um erro!!!", Toast.LENGTH_SHORT).show();
+        }
+        return false;
     }
 }

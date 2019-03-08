@@ -4,10 +4,13 @@ import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import java.util.List;
 import br.senac.app_controledegastos.DAO.GastoDAO;
 import br.senac.app_controledegastos.Model.Gasto;
@@ -53,6 +56,29 @@ public class MainActivity extends AppCompatActivity {
             ArrayAdapter<Gasto> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, gasto);
             listViewGastos.setAdapter(adapter);
         }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        Intent intent;
+
+        switch (item.getItemId()) {
+            case R.id.menu_cadastrar:
+                intent = new Intent(this, CadGasto.class);
+                startActivity(intent);
+                return true;
+
+            case R.id.menu_listar:
+                intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                return true;
+
+            default:
+                Toast.makeText(this, "Houve um erro!!!", Toast.LENGTH_SHORT).show();
+        }
+        return false;
+    }
 
 
 

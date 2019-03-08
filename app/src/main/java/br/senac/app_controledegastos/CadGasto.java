@@ -1,7 +1,11 @@
 package br.senac.app_controledegastos;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,6 +21,7 @@ public class CadGasto extends AppCompatActivity {
     private GastoDAO gastoDAO;
     private Button btnCadEnviar;
     private TextView titCadGasto;
+    private MenuItem cadastrar;
 
 
 
@@ -45,4 +50,39 @@ public class CadGasto extends AppCompatActivity {
 
 
     }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu_controlegasto, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        Intent intent;
+
+        switch (item.getItemId()) {
+            case R.id.menu_cadastrar:
+                intent = new Intent(this, CadGasto.class);
+                startActivity(intent);
+                return true;
+
+            case R.id.menu_listar:
+                intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                return true;
+
+            default:
+                Toast.makeText(this, "Houve um erro!!!", Toast.LENGTH_SHORT).show();
+        }
+        return false;
+    }
+
+
+
+
+
 }

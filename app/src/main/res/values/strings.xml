@@ -18,5 +18,6 @@
     <string name="edDados">Editar dados</string>
     <string name="verdados">Visualizar lista</string>
     <string name="excDados">Excluir gasto</string>
+    <string name="excGasto">Excluir</string>
 
 </resources>
