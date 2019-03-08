@@ -7,5 +7,11 @@
     <string name="categoria">Categoria</string>
     <string name="valor">Valor</string>
     <string name="btnEnviar">Enviar</string>
+    <string name="TitEditGasto">Editar Gasto</string>
+    <string name="edData">Edite a data</string>
+    <string name="edDescricao">Edite a descrição</string>
+    <string name="edCategoria">Edite a categoria</string>
+    <string name="edValor">Edite o valor</string>
+    <string name="btnEdit">Editar</string>
 
 </resources>

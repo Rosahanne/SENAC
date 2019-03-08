@@ -2,6 +2,7 @@ package br.senac.app_controledegastos.helper;
 
 import android.widget.EditText;
 import br.senac.app_controledegastos.CadGasto;
+import br.senac.app_controledegastos.EditGasto;
 import br.senac.app_controledegastos.Model.Gasto;
 import br.senac.app_controledegastos.R;
 
