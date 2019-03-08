@@ -2,6 +2,8 @@ package br.senac.app_controledegastos.Model;
 
 import java.io.Serializable;
 
+import br.senac.app_controledegastos.adapters.GastoAdapter;
+
 public class Gasto implements Serializable {
 
     private long idGasto;
@@ -23,6 +25,9 @@ public class Gasto implements Serializable {
         this.descricao = descricao;
         this.categoria = categoria;
         this.valor = valor;
+    }
+
+    public Gasto(GastoAdapter gastoAdapter) {
     }
 
     @Override
@@ -62,4 +67,6 @@ public class Gasto implements Serializable {
     public void setCategoria(String categoria) {this.categoria = categoria;}
 
     public void setValor(double valor) {this.valor = valor;}
+
+    
 }
