@@ -24,7 +24,7 @@ public class GastoDAO extends SQLiteOpenHelper {
                 "idGasto INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "data TEXT not null," +
                 "descricao TEXT not null," +
-                "categoria TEXT not null UNIQUE," +
+                "categoria TEXT not null," +
                 "valor DECIMAL not null)";
         db.execSQL(sql);
     }

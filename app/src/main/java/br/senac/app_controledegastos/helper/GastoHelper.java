@@ -1,9 +1,7 @@
 package br.senac.app_controledegastos.helper;
 
-import android.app.Activity;
 import android.widget.EditText;
 import br.senac.app_controledegastos.CadGasto;
-import br.senac.app_controledegastos.EditGasto;
 import br.senac.app_controledegastos.Model.Gasto;
 import br.senac.app_controledegastos.R;
 
@@ -44,7 +42,7 @@ public class GastoHelper {
         String categoria = editCategoria.getText().toString();
         Double valor = Double.parseDouble(editValor.getText().toString());
 
-        return new Gasto(data, descricao, categoria, valor);
+        return new Gasto(gasto.getIdGasto(), data, descricao, categoria, valor);
     }
 
     public void carregaCampos(Gasto gasto) {

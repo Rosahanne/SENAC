@@ -16,7 +16,7 @@ public class CadGasto extends AppCompatActivity {
     private GastoHelper helper;
     private GastoDAO gastoDAO;
     private Button btnCadEnviar;
-    private TextView titCadGastro;
+    private TextView titCadGasto;
 
 
 
@@ -25,7 +25,7 @@ public class CadGasto extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadgasto);
 
-        titCadGastro = findViewById(R.id. tCadGasto);
+        titCadGasto = findViewById(R.id. tCadGasto);
         btnCadEnviar = findViewById(R.id. btnCad_Enviar);
         helper = new GastoHelper(this);
         gastoDAO = new GastoDAO(this);
@@ -34,7 +34,7 @@ public class CadGasto extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Gasto gasto = helper.getGasto();
-                gastoDAO.inserir(gasto);
+
                 if (gastoDAO.inserir(gasto) == -1) {
                     Toast.makeText(CadGasto.this,"Não funcionou", Toast.LENGTH_LONG).show();
                 } else {

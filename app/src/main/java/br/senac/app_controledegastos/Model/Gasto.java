@@ -25,6 +25,14 @@ public class Gasto implements Serializable {
         this.valor = valor;
     }
 
+    @Override
+    public String toString() {
+        return ("Data: " + data + "\n" +
+                "Descrição: " + descricao + "\n" +
+                "Categoria: " + categoria + "\n" +
+                "Valor: " + valor);
+    }
+
     public long getIdGasto() {
         return idGasto;
     }
