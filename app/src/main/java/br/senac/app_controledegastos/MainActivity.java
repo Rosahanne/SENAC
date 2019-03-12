@@ -14,6 +14,7 @@ import android.widget.Toast;
 import java.util.List;
 import br.senac.app_controledegastos.DAO.GastoDAO;
 import br.senac.app_controledegastos.Model.Gasto;
+import br.senac.app_controledegastos.adapters.GastoAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -52,8 +53,10 @@ public class MainActivity extends AppCompatActivity {
         protected void onResume(){
             super.onResume();
             GastoDAO gastoDAO = new GastoDAO(this);
-            List<Gasto> gasto = gastoDAO.listaTodosGastos();
-            ArrayAdapter<Gasto> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, gasto);
+            List<Gasto> gastoList = gastoDAO.listaTodosGastos();
+//            ArrayAdapter<Gasto> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, gasto);
+//            listViewGastos.setAdapter(adapter);
+            GastoAdapter adapter = new GastoAdapter(gastoList, this);
             listViewGastos.setAdapter(adapter);
         }
 
