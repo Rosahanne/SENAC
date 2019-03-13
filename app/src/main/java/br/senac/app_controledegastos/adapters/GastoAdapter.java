@@ -1,13 +1,13 @@
 package br.senac.app_controledegastos.adapters;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.EditText;
-
+import android.widget.TextView;
 import java.util.List;
-
+import br.senac.app_controledegastos.EditGasto;
 import br.senac.app_controledegastos.MainActivity;
 import br.senac.app_controledegastos.Model.Gasto;
 import br.senac.app_controledegastos.R;
@@ -17,12 +17,18 @@ public class GastoAdapter extends BaseAdapter {
 
     private final List<Gasto>gastoList;
     private final Activity act;
-
+    public static final String MAIN_GASTO = "main_gasto";
 
     public GastoAdapter(List<Gasto> gastoList, Activity act) {
         this.gastoList = gastoList;
         this.act = act;
     }
+
+    public GastoAdapter(List<Gasto> gastoList, MainActivity mainActivity){
+        this.gastoList = gastoList;
+        this.act = mainActivity;
+    }
+
         @Override
         public int getCount() {
             return gastoList.size();
@@ -35,8 +41,8 @@ public class GastoAdapter extends BaseAdapter {
 
         @Override
         public long getItemId(int position) {
-            Gasto gasto = gastoList.get(position);
-            return gasto.getIdGasto();}
+            return gastoList.get(position).getIdGasto();
+        }
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
@@ -44,22 +50,36 @@ public class GastoAdapter extends BaseAdapter {
                     .inflate(R.layout.list_gastos_personalizada, parent, false);
             Gasto gasto = gastoList.get(position);
 
-            EditText data = (EditText)
-            view.findViewById(R.id.editText_Data);
-            EditText descricao = (EditText)
-            view.findViewById(R.id.editText_Descricao);
-            EditText categoria = (EditText)
-            view.findViewById(R.id.editText_Categoria);
-            EditText valor = (EditText)
-            view.findViewById(R.id.editText_Valor);
+//            TextView data = (TextView)
+//            view.findViewById(R.id.textView_Data);
+            TextView descricao = (TextView)
+            view.findViewById(R.id.textView_Descricao);
+            TextView categoria = (TextView)
+            view.findViewById(R.id.textView_Categoria);
+//            TextView valor = (TextView)
+////            view.findViewById(R.id.textView_Valor);
 
 
-            data.setText(gasto.getData());
-            descricao.setText(gasto.getDescricao());
+//            data.setText(gasto.getData());
             categoria.setText(gasto.getCategoria());
-            valor.setText(String.valueOf(gasto.getValor()));
+            descricao.setText(gasto.getDescricao());
+//           valor.setText(String.valueOf(gasto.getValor()));
+
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent =  new Intent(act, EditGasto.class);
+                    act.startActivity(intent);
+
+                }
+            });
+
+
 
             return view;
         }
+
+
+
 
 }
