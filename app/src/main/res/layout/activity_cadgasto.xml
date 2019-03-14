@@ -45,40 +45,27 @@
         android:id="@+id/descricaoCadGasto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="@string/descricao"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/dataCadGasto"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/dataCadGasto"
         app:layout_constraintTop_toBottomOf="@+id/dataCadGasto" />
-
-    <EditText
-        android:id="@+id/categoriaCadGasto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="@string/categoria"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/descricaoCadGasto"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/descricaoCadGasto"
-        app:layout_constraintTop_toBottomOf="@+id/descricaoCadGasto" />
 
     <EditText
         android:id="@+id/valorCadGasto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/valor"
         android:inputType="number"
-        app:layout_constraintEnd_toEndOf="@+id/categoriaCadGasto"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_Cadcategoria"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/categoriaCadGasto"
-        app:layout_constraintTop_toBottomOf="@+id/categoriaCadGasto" />
+        app:layout_constraintStart_toStartOf="@+id/spinner_Cadcategoria"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_Cadcategoria" />
 
     <Button
         android:id="@+id/btnCad_Enviar"
@@ -94,5 +81,15 @@
         app:layout_constraintStart_toStartOf="@+id/valorCadGasto"
         app:layout_constraintTop_toBottomOf="@+id/valorCadGasto"
         app:layout_constraintVertical_bias="0.0" />
+
+    <Spinner
+        android:id="@+id/spinner_Cadcategoria"
+        android:layout_width="211dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/descricaoCadGasto"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/descricaoCadGasto"
+        app:layout_constraintTop_toBottomOf="@+id/descricaoCadGasto" />
 
 </android.support.constraint.ConstraintLayout>

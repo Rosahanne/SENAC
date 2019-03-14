@@ -1,6 +1,9 @@
 package br.senac.app_controledegastos.helper;
 
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
+
 import br.senac.app_controledegastos.CadGasto;
 import br.senac.app_controledegastos.EditGasto;
 import br.senac.app_controledegastos.Model.Gasto;
@@ -11,8 +14,8 @@ public class GastoHelper {
     private long idGasto;
     private EditText editData;
     private EditText editDescricao;
-    private EditText editCategoria;
     private EditText editValor;
+    private Spinner spinnerCategoria;
     private Gasto gasto;
 
     public GastoHelper(CadGasto activity) {
@@ -22,7 +25,7 @@ public class GastoHelper {
     public void carregaCampos(CadGasto activity) {
         editData = activity.findViewById(R.id.dataCadGasto);
         editDescricao = activity.findViewById(R.id.descricaoCadGasto);
-        editCategoria = activity.findViewById(R.id.categoriaCadGasto);
+        spinnerCategoria = activity.findViewById(R.id.spinner_Cadcategoria);
         editValor = activity.findViewById(R.id.valorCadGasto);
     }
 
@@ -33,20 +36,20 @@ public class GastoHelper {
     public void carregaCampos(EditGasto activity) {
         editData = activity.findViewById(R.id.dataEditGasto);
         editDescricao = activity.findViewById(R.id.descricaoEditGasto);
-        editCategoria = activity.findViewById(R.id.categoriaEditGasto);
+        spinnerCategoria = activity.findViewById(R.id.spinner_Editcategoria);
         editValor = activity.findViewById(R.id.valorEditGasto);
     }
 
     public Gasto getGasto() {
         String data = editData.getText().toString();
         String descricao = editDescricao.getText().toString();
-        String categoria = editCategoria.getText().toString();
+//        String categoria = editCategoria.getText().toString();
         Double valor = Double.parseDouble(editValor.getText().toString());
 
         if (gasto != null) {
-            return new Gasto(gasto.getIdGasto(), data, descricao, categoria, valor);
+            return new Gasto(gasto.getIdGasto(), data, descricao, valor);
         }
-        return new Gasto(data, descricao, categoria, valor);
+        return new Gasto(data, descricao, valor);
     }
 
 
@@ -54,8 +57,17 @@ public class GastoHelper {
         this.gasto = gasto;
         editData.setText(gasto.getData());
         editDescricao.setText(gasto.getDescricao());
-        editCategoria.setText(gasto.getCategoria());
+//        editCategoria.setText(gasto.getCategoria());
         editValor.setText(String.valueOf(gasto.getValor()));
+    }
+
+    private void carregaSpinner(){
+        spinnerCategoria = findViewById(R.id.spinner_Cadcategoria);
+        spinnerCategoria = findViewById(R.id.spinner_Editcategoria);
+        ArrayAdapter<String> adapter = ArrayAdapter.createFromResource
+                (this, R.array.lista_categoria,
+                android.R.layout.simple_spinner_item);
+        spinnerCategoria.setAdapter(adapter);
     }
 
 }

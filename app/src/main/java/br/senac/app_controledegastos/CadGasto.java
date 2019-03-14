@@ -7,7 +7,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,8 +24,6 @@ public class CadGasto extends AppCompatActivity {
     private Button btnCadEnviar;
     private TextView titCadGasto;
     private MenuItem cadastrar;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

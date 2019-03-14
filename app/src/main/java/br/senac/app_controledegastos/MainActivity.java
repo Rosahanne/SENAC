@@ -19,7 +19,9 @@ import br.senac.app_controledegastos.adapters.GastoAdapter;
 public class MainActivity extends AppCompatActivity {
 
     private ListView listViewGastos;
+//    private FloatingActionButton fabAddGasto;
     private FloatingActionButton fabAddGasto;
+    private FloatingActionButton fabEditGasto;
     public static final String MAIN_GASTO = "main_gasto";
 
     @Override
@@ -28,15 +30,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         listViewGastos=(findViewById(R.id.main_listViewGastos));
-        fabAddGasto=(findViewById(R.id.main_fabAddGastos));
-
-        fabAddGasto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CadGasto.class);
-                startActivity(intent);
-            }
-        });
+//        fabAddGasto=(findViewById(R.id.main_fabAddGastos));
+//
+//        fabAddGasto.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this, CadGasto.class);
+//                startActivity(intent);
+//            }
+//        });
 
         listViewGastos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

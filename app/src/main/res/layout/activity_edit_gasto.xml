@@ -33,18 +33,6 @@
         app:layout_constraintTop_toBottomOf="@+id/dataEditGasto" />
 
     <EditText
-        android:id="@+id/categoriaEditGasto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="@string/edCategoria"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/descricaoEditGasto"
-        app:layout_constraintStart_toStartOf="@+id/descricaoEditGasto"
-        app:layout_constraintTop_toBottomOf="@+id/descricaoEditGasto" />
-
-    <EditText
         android:id="@+id/valorEditGasto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -54,11 +42,10 @@
         android:hint="@string/edValor"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/categoriaEditGasto"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/categoriaEditGasto"
-        app:layout_constraintTop_toBottomOf="@+id/categoriaEditGasto"
-        app:layout_constraintVertical_bias="0.038" />
+        app:layout_constraintEnd_toEndOf="@+id/spinner_Editcategoria"
+        app:layout_constraintStart_toStartOf="@+id/spinner_Editcategoria"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_Editcategoria"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tEdGasto"
@@ -77,7 +64,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnEdit"
+        android:id="@+id/btnEd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
@@ -96,8 +83,18 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="@string/btnExc"
-        app:layout_constraintEnd_toStartOf="@+id/btnEdit"
+        app:layout_constraintEnd_toStartOf="@+id/btnEd"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/valorEditGasto"
         app:layout_constraintTop_toBottomOf="@+id/valorEditGasto" />
+
+    <Spinner
+        android:id="@+id/spinner_Editcategoria"
+        android:layout_width="210dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/descricaoEditGasto"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/descricaoEditGasto"
+        app:layout_constraintTop_toBottomOf="@+id/descricaoEditGasto" />
 </android.support.constraint.ConstraintLayout>

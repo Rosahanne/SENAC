@@ -18,6 +18,13 @@
     <string name="TextView_Descricao"></string>
     <string name="TextView_Categoria" />
     <string name="TextView_Valor" />
+    <string-array name="lista_categoria">
+        <item>Alimentação</item>
+        <item>Veículo</item>
+        <item>Lazer</item>
+        <item>Residência</item>
+        <item>Vestuário</item>
+    </string-array>
 
 
 </resources>
