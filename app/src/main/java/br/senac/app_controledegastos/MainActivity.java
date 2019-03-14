@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, EditGasto.class);
                 Gasto gasto = (Gasto)parent.getItemAtPosition(position);
                 intent.putExtra(MAIN_GASTO, gasto);
-                startActivity(intent);
+                startActivity(intent);;
             }
         });
      }
