@@ -1,5 +1,7 @@
 package br.senac.app_controledegastos.helper;
 
+import android.app.Activity;
+import android.content.Context;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -17,12 +19,14 @@ public class GastoHelper {
     private EditText editValor;
     private Spinner spinnerCategoria;
     private Gasto gasto;
+    private Context activity;
 
     public GastoHelper(CadGasto activity) {
         carregaCampos(activity);
     }
 
     public void carregaCampos(CadGasto activity) {
+        this.activity = activity;
         editData = activity.findViewById(R.id.dataCadGasto);
         editDescricao = activity.findViewById(R.id.descricaoCadGasto);
         spinnerCategoria = activity.findViewById(R.id.spinner_Cadcategoria);
@@ -62,10 +66,8 @@ public class GastoHelper {
     }
 
     private void carregaSpinner(){
-        spinnerCategoria = findViewById(R.id.spinner_Cadcategoria);
-        spinnerCategoria = findViewById(R.id.spinner_Editcategoria);
-        ArrayAdapter<String> adapter = ArrayAdapter.createFromResource
-                (this, R.array.lista_categoria,
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource
+                (this.activity, activity.R.array.lista_categoria),
                 android.R.layout.simple_spinner_item);
         spinnerCategoria.setAdapter(adapter);
     }
