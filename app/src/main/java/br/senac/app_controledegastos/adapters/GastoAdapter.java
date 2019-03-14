@@ -63,12 +63,12 @@ public class GastoAdapter extends BaseAdapter {
             TextView valor = (TextView)
             view.findViewById(R.id.textView_Valor);
             FloatingActionButton cadastrar = (FloatingActionButton)
-            view.findViewById(R.id.btnCad);
+            view.findViewById(R.id.AddGastos);
             FloatingActionButton editar = (FloatingActionButton)
-            view.findViewById(R.id.btnEd);
+            view.findViewById(R.id.EditGastos);
 
             data.setText(gasto.getData());
-            categoria.setText(gasto.getCategoria());
+//            categoria.setText(gasto.getCarregaSpinner(Array.lista_categoria));
             descricao.setText(gasto.getDescricao());
             valor.setText(String.valueOf(gasto.getValor()));
 

@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -19,8 +18,8 @@ import br.senac.app_controledegastos.adapters.GastoAdapter;
 public class MainActivity extends AppCompatActivity {
 
     private ListView listViewGastos;
+    private FloatingActionButton fabAdGasto;
 //    private FloatingActionButton fabAddGasto;
-    private FloatingActionButton fabAddGasto;
     private FloatingActionButton fabEditGasto;
     public static final String MAIN_GASTO = "main_gasto";
 
@@ -30,8 +29,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         listViewGastos=(findViewById(R.id.main_listViewGastos));
-//        fabAddGasto=(findViewById(R.id.main_fabAddGastos));
-//
+        fabAdGasto=(findViewById(R.id.AddGastos));
+        fabEditGasto=(findViewById(R.id.EditGastos));
+
 //        fabAddGasto.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -39,10 +39,28 @@ public class MainActivity extends AppCompatActivity {
 //                startActivity(intent);
 //            }
 //        });
+//
+//        listViewGastos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Intent intent = new Intent(MainActivity.this, EditGasto.class);
+//                Gasto gasto = (Gasto)parent.getItemAtPosition(position);
+//                intent.putExtra(MAIN_GASTO, gasto);
+//                startActivity(intent);
+//            }
+//        });
 
-        listViewGastos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        fabAdGasto.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CadGasto.class);
+                startActivity(intent);
+            }
+        });
+
+        fabEditGasto.setOnClickListener(new AdapterView.OnClickListener() {
+            @Override
+            public void onClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(MainActivity.this, EditGasto.class);
                 Gasto gasto = (Gasto)parent.getItemAtPosition(position);
                 intent.putExtra(MAIN_GASTO, gasto);

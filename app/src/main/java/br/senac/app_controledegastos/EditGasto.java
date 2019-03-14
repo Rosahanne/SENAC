@@ -27,7 +27,7 @@ public class EditGasto extends AppCompatActivity {
         setContentView(R.layout.activity_edit_gasto);
 
         titEditGastro = findViewById(R.id.tEdGasto);
-        btnEditar = findViewById(R.id.btnEd);
+        btnEditar = findViewById(R.id.EditGastos);
         btnExcluir = findViewById(R.id.btnExc);
         helper = new GastoHelper(this);
         gastoDAO = new GastoDAO(this);

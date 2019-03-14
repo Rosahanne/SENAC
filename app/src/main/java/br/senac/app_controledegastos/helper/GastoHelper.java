@@ -5,7 +5,6 @@ import android.content.Context;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
-
 import br.senac.app_controledegastos.CadGasto;
 import br.senac.app_controledegastos.EditGasto;
 import br.senac.app_controledegastos.Model.Gasto;
@@ -23,6 +22,7 @@ public class GastoHelper {
 
     public GastoHelper(CadGasto activity) {
         carregaCampos(activity);
+        carregaSpinner();
     }
 
     public void carregaCampos(CadGasto activity) {
@@ -35,6 +35,7 @@ public class GastoHelper {
 
     public GastoHelper(EditGasto activity) {
         carregaCampos(activity);
+        carregaSpinner();
     }
 
     public void carregaCampos(EditGasto activity) {
@@ -67,8 +68,8 @@ public class GastoHelper {
 
     private void carregaSpinner(){
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource
-                (this.activity, activity.R.array.lista_categoria),
-                android.R.layout.simple_spinner_item);
+                (this.activity, activity.R.array.lista_categoria,
+                        android.R.layout.simple_spinner_item);
         spinnerCategoria.setAdapter(adapter);
     }
 
