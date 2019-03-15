@@ -17,20 +17,18 @@ import br.senac.app_controledegastos.EditGasto;
 import br.senac.app_controledegastos.MainActivity;
 import br.senac.app_controledegastos.Model.Gasto;
 import br.senac.app_controledegastos.R;
-import br.senac.app_controledegastos.helper.GastoHelper;
+
 
 
 public class GastoAdapter extends BaseAdapter {
 
     public static final double LINHA_AFETADA = 1;
-    private GastoHelper helper;
+    public static final String MAIN_GASTO = "main_gasto";
     private GastoDAO gastoDAO;
     private final List<Gasto>gastoList;
     private final Activity act;
     private FloatingActionButton fabExcGasto;
-    private FloatingActionButton fabAddGasto;
     private FloatingActionButton fabEditGasto;
-
 
 
     public GastoAdapter(List<Gasto> gastoList, Activity act) {
@@ -59,10 +57,11 @@ public class GastoAdapter extends BaseAdapter {
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(final int position, View convertView, ViewGroup parent) {
             View view = act.getLayoutInflater()
                     .inflate(R.layout.list_gastos_personalizada, parent, false);
             Gasto gasto = gastoList.get(position);
+            gastoDAO = new GastoDAO(act);
 
             TextView data = (TextView)
             view.findViewById(R.id.textView_Data);
@@ -72,12 +71,9 @@ public class GastoAdapter extends BaseAdapter {
             view.findViewById(R.id.textView_Categoria);
             TextView valor = (TextView)
             view.findViewById(R.id.textView_Valor);
-            FloatingActionButton cadastrar = (FloatingActionButton)
-            view.findViewById(R.id.AddGasto);
-            FloatingActionButton excluir = (FloatingActionButton)
-            view.findViewById(R.id.ExcGasto);
-            FloatingActionButton editar = (FloatingActionButton)
-            view.findViewById(R.id.EditGasto);
+
+            fabEditGasto = view.findViewById(R.id.ExcGasto);
+            fabExcGasto = view.findViewById(R.id.EditGasto);
 
             data.setText(gasto.getData());
 //          categoria.setText(gasto.getCarregaSpinner(Array.lista_categoria));
@@ -93,19 +89,12 @@ public class GastoAdapter extends BaseAdapter {
                 }
             });
 
-            fabAddGasto.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(act, CadGasto.class);
-                    act.startActivity(intent);
-                }
-            });
-
 
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent =  new Intent(act, EditGasto.class);
+                    intent.putExtra(MAIN_GASTO, getItemId(position));
                     act.startActivity(intent);
 
                 }
@@ -114,22 +103,21 @@ public class GastoAdapter extends BaseAdapter {
             fabEditGasto.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
                     Intent intent = new Intent(act, EditGasto.class);
+                    intent.putExtra(MAIN_GASTO, getItemId(position));
                     act.startActivity(intent);
                 }
             });
 
+
             fabExcGasto.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Gasto gasto = helper.getGasto();
+                    if (gastoDAO.deletar(getItemId(position)) == LINHA_AFETADA) {
+                        Toast.makeText(act,"Funcionou!", Toast.LENGTH_LONG).show();
 
-                    if (gastoDAO.deletar(gasto.getIdGasto()) == LINHA_AFETADA) {
-                        Toast.makeText(act.this,"Funcionou!", Toast.LENGTH_LONG).show();
-                        finish();
                     } else {
-                        Toast.makeText(act.this,"Não funcionou!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(act,"Não funcionou!", Toast.LENGTH_LONG).show();
                     }
                 }
             });

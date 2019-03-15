@@ -18,9 +18,8 @@ import br.senac.app_controledegastos.adapters.GastoAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
-//    private FloatingActionButton fabAddGasto;
+    private FloatingActionButton fabAddGasto;
     private ListView listViewGastos;
-    public static final String MAIN_GASTO = "main_gasto";
     private GastoDAO gastoDAO;
 
     @Override
@@ -29,15 +28,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         listViewGastos=(findViewById(R.id.main_listViewGastos));
-//        fabAddGasto=(findViewById(R.id.AddGasto));
+        fabAddGasto=(findViewById(R.id.AddGasto));
 
-//        fabAddGasto.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, CadGasto.class);
-//                startActivity(intent);
-//            }
-//        });
+        fabAddGasto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CadGasto.class);
+                startActivity(intent);
+            }
+        });
 //
 //        listViewGastos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override
@@ -59,8 +58,8 @@ public class MainActivity extends AppCompatActivity {
             List<Gasto> gastoList = gastoDAO.listaTodosGastos();
 //            ArrayAdapter<Gasto> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, gasto);
 //            listViewGastos.setAdapter(adapter);
-            GastoAdapter adapter = new GastoAdapter(gastoList, this);
-            listViewGastos.setAdapter(adapter);
+            GastoAdapter adapterG = new GastoAdapter(gastoList, this);
+            listViewGastos.setAdapter(adapterG);
         }
 
 

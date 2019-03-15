@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import br.senac.app_controledegastos.DAO.GastoDAO;
 import br.senac.app_controledegastos.Model.Gasto;
+import br.senac.app_controledegastos.adapters.GastoAdapter;
 import br.senac.app_controledegastos.helper.GastoHelper;
 
 public class EditGasto extends AppCompatActivity {
@@ -33,7 +34,7 @@ public class EditGasto extends AppCompatActivity {
         gastoDAO = new GastoDAO(this);
 
         Intent intent = getIntent();
-        Gasto gasto = (Gasto) intent.getSerializableExtra(MainActivity.MAIN_GASTO);
+        Gasto gasto = (Gasto) intent.getSerializableExtra(GastoAdapter.MAIN_GASTO);
         helper.carregaCampos(gasto);
 
 
