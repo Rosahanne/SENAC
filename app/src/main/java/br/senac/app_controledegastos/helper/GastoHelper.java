@@ -48,13 +48,13 @@ public class GastoHelper {
     public Gasto getGasto() {
         String data = editData.getText().toString();
         String descricao = editDescricao.getText().toString();
-//        String categoria = editCategoria.getText().toString();
+        String categoria = spinnerCategoria.getSelectedItem().toString();
         Double valor = Double.parseDouble(editValor.getText().toString());
 
         if (gasto != null) {
-            return new Gasto(gasto.getIdGasto(), data, descricao, valor);
+            return new Gasto(gasto.getIdGasto(), data, descricao, categoria,valor);
         }
-        return new Gasto(data, descricao, valor);
+        return new Gasto(data, descricao, categoria,valor);
     }
 
 
@@ -68,7 +68,7 @@ public class GastoHelper {
 
     private void carregaSpinner(){
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource
-                (this.activity, activity.R.array.lista_categoria,
+                (this.activity,R.array.lista_categoria,
                         android.R.layout.simple_spinner_item);
         spinnerCategoria.setAdapter(adapter);
     }

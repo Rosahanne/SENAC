@@ -14,11 +14,11 @@ import br.senac.app_controledegastos.helper.GastoHelper;
 
 public class EditGasto extends AppCompatActivity {
 
-    public static final double LINHA_AFETADA = 1;
+//    public static final double LINHA_AFETADA = 1;
     private GastoHelper helper;
     private GastoDAO gastoDAO;
     private Button btnEditar;
-    private Button btnExcluir;
+//    private Button btnExcluir;
     private TextView titEditGastro;
 
     @Override
@@ -27,8 +27,8 @@ public class EditGasto extends AppCompatActivity {
         setContentView(R.layout.activity_edit_gasto);
 
         titEditGastro = findViewById(R.id.tEdGasto);
-        btnEditar = findViewById(R.id.EditGastos);
-        btnExcluir = findViewById(R.id.btnExc);
+        btnEditar = findViewById(R.id.ExcGasto);
+//        btnExcluir = findViewById(R.id.btnExc);
         helper = new GastoHelper(this);
         gastoDAO = new GastoDAO(this);
 
@@ -51,19 +51,19 @@ public class EditGasto extends AppCompatActivity {
             }
         });
 
-        btnExcluir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Gasto gasto = helper.getGasto();
-
-                if (gastoDAO.deletar(gasto.getIdGasto()) == LINHA_AFETADA) {
-                    Toast.makeText(EditGasto.this,"Funcionou!", Toast.LENGTH_LONG).show();
-                    finish();
-                } else {
-                    Toast.makeText(EditGasto.this,"Não funcionou!", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
+//        btnExcluir.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Gasto gasto = helper.getGasto();
+//
+//                if (gastoDAO.deletar(gasto.getIdGasto()) == LINHA_AFETADA) {
+//                    Toast.makeText(EditGasto.this,"Funcionou!", Toast.LENGTH_LONG).show();
+//                    finish();
+//                } else {
+//                    Toast.makeText(EditGasto.this,"Não funcionou!", Toast.LENGTH_LONG).show();
+//                }
+//            }
+//        });
     }
 
     @Override

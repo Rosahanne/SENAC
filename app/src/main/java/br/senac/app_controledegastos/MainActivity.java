@@ -6,22 +6,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import java.util.List;
 import br.senac.app_controledegastos.DAO.GastoDAO;
 import br.senac.app_controledegastos.Model.Gasto;
 import br.senac.app_controledegastos.adapters.GastoAdapter;
 
+
+
+
 public class MainActivity extends AppCompatActivity {
 
-    private ListView listViewGastos;
-    private FloatingActionButton fabAdGasto;
 //    private FloatingActionButton fabAddGasto;
-    private FloatingActionButton fabEditGasto;
+    private ListView listViewGastos;
     public static final String MAIN_GASTO = "main_gasto";
+    private GastoDAO gastoDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         listViewGastos=(findViewById(R.id.main_listViewGastos));
-        fabAdGasto=(findViewById(R.id.AddGastos));
-        fabEditGasto=(findViewById(R.id.EditGastos));
+//        fabAddGasto=(findViewById(R.id.AddGasto));
 
 //        fabAddGasto.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -50,23 +49,7 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 
-        fabAdGasto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CadGasto.class);
-                startActivity(intent);
-            }
-        });
 
-        fabEditGasto.setOnClickListener(new AdapterView.OnClickListener() {
-            @Override
-            public void onClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(MainActivity.this, EditGasto.class);
-                Gasto gasto = (Gasto)parent.getItemAtPosition(position);
-                intent.putExtra(MAIN_GASTO, gasto);
-                startActivity(intent);;
-            }
-        });
      }
 
         @Override
