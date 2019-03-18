@@ -72,11 +72,11 @@ public class GastoAdapter extends BaseAdapter {
             TextView valor = (TextView)
             view.findViewById(R.id.textView_Valor);
 
-            fabExcGasto = view.findViewById(R.id.ExcGasto);
-            fabEditGasto = view.findViewById(R.id.EditGasto);
+            fabExcGasto = view.findViewById(R.id.list_ExcGasto);
+            fabEditGasto = view.findViewById(R.id.list_EditGasto);
 
             data.setText(gasto.getData());
-//          categoria.setText(gasto.getCarregaSpinner(Array.lista_categoria));
+            categoria.setText(gasto.getCategoria());
             descricao.setText(gasto.getDescricao());
             valor.setText(String.valueOf(gasto.getValor()));
 

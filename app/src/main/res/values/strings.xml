@@ -7,17 +7,18 @@
     <string name="categoria">Categoria</string>
     <string name="valor">Valor</string>
     <string name="btnEnviar">Enviar</string>
-    <string name="TitEditGasto">Editar Gasto</string>
+    <string name="TitEditGasto">Edição de Gasto</string>
     <string name="edData">Edite a data</string>
     <string name="edDescricao">Edite a descrição</string>
     <string name="edCategoria">Edite a categoria</string>
     <string name="edValor">Edite o valor</string>
     <string name="btnEdit">Editar</string>
-    <string name="btnExc">Excluir</string>
     <string name="TextView_Data"></string>
     <string name="TextView_Descricao"></string>
     <string name="TextView_Categoria" />
     <string name="TextView_Valor" />
+    <string name="list_btnEdit">Editar</string>
+    <string name="list_btnExc">Excluir</string>
     <string-array name="lista_categoria">
         <item>Alimentação</item>
         <item>Educação</item>

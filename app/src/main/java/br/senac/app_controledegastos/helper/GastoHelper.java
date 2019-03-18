@@ -5,6 +5,8 @@ import android.content.Context;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
+
 import br.senac.app_controledegastos.CadGasto;
 import br.senac.app_controledegastos.EditGasto;
 import br.senac.app_controledegastos.Model.Gasto;
@@ -60,8 +62,7 @@ public class GastoHelper {
         this.gasto = gasto;
         editData.setText(gasto.getData());
         editDescricao.setText(gasto.getDescricao());
-//        spinnerCategoria.setText(gasto.getCategoria());
-       editValor.setText(String.valueOf(gasto.getValor()));
+        editValor.setText(String.valueOf(gasto.getValor()));
     }
 
     private void carregaSpinner(EditGasto activity){

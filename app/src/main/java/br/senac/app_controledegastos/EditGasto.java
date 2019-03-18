@@ -15,11 +15,9 @@ import br.senac.app_controledegastos.helper.GastoHelper;
 
 public class EditGasto extends AppCompatActivity {
 
-//    public static final double LINHA_AFETADA = 1;
     private GastoHelper helper;
     private GastoDAO gastoDAO;
     private Button btnEditar;
-//    private Button btnExcluir;
     private TextView titEditGastro;
 
     @Override
@@ -29,7 +27,6 @@ public class EditGasto extends AppCompatActivity {
 
         titEditGastro = findViewById(R.id.tEdGasto);
         btnEditar = findViewById(R.id.EditGasto);
-//        btnExcluir = findViewById(R.id.btnExc);
         helper = new GastoHelper(this);
         gastoDAO = new GastoDAO(this);
 
