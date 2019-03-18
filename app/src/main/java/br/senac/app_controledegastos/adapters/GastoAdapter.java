@@ -23,7 +23,7 @@ import br.senac.app_controledegastos.R;
 public class GastoAdapter extends BaseAdapter {
 
     public static final double LINHA_AFETADA = 1;
-    public static final String MAIN_GASTO = "main_gasto";
+    public static final String EDIT_GASTO = "EditarDado";
     private GastoDAO gastoDAO;
     private final List<Gasto>gastoList;
     private final Activity act;
@@ -72,8 +72,8 @@ public class GastoAdapter extends BaseAdapter {
             TextView valor = (TextView)
             view.findViewById(R.id.textView_Valor);
 
-            fabEditGasto = view.findViewById(R.id.ExcGasto);
-            fabExcGasto = view.findViewById(R.id.EditGasto);
+            fabExcGasto = view.findViewById(R.id.ExcGasto);
+            fabEditGasto = view.findViewById(R.id.EditGasto);
 
             data.setText(gasto.getData());
 //          categoria.setText(gasto.getCarregaSpinner(Array.lista_categoria));
@@ -94,7 +94,7 @@ public class GastoAdapter extends BaseAdapter {
                 @Override
                 public void onClick(View v) {
                     Intent intent =  new Intent(act, EditGasto.class);
-                    intent.putExtra(MAIN_GASTO, getItemId(position));
+                    intent.putExtra("EditarDado", gastoList.get(position));
                     act.startActivity(intent);
 
                 }
@@ -104,7 +104,7 @@ public class GastoAdapter extends BaseAdapter {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(act, EditGasto.class);
-                    intent.putExtra(MAIN_GASTO, getItemId(position));
+                    intent.putExtra("EditarDado", gastoList.get(position));
                     act.startActivity(intent);
                 }
             });

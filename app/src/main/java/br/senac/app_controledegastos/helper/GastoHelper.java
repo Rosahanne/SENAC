@@ -22,26 +22,24 @@ public class GastoHelper {
 
     public GastoHelper(CadGasto activity) {
         carregaCampos(activity);
-        carregaSpinner();
+        carregaSpinner(activity);
     }
 
     public void carregaCampos(CadGasto activity) {
         this.activity = activity;
         editData = activity.findViewById(R.id.dataCadGasto);
         editDescricao = activity.findViewById(R.id.descricaoCadGasto);
-        spinnerCategoria = activity.findViewById(R.id.spinner_Cadcategoria);
         editValor = activity.findViewById(R.id.valorCadGasto);
     }
 
     public GastoHelper(EditGasto activity) {
         carregaCampos(activity);
-        carregaSpinner();
+        carregaSpinner(activity);
     }
 
     public void carregaCampos(EditGasto activity) {
         editData = activity.findViewById(R.id.dataEditGasto);
         editDescricao = activity.findViewById(R.id.descricaoEditGasto);
-        spinnerCategoria = activity.findViewById(R.id.spinner_Editcategoria);
         editValor = activity.findViewById(R.id.valorEditGasto);
     }
 
@@ -62,15 +60,27 @@ public class GastoHelper {
         this.gasto = gasto;
         editData.setText(gasto.getData());
         editDescricao.setText(gasto.getDescricao());
-//        editCategoria.setText(gasto.getCategoria());
+//        spinnerCategoria.setText(gasto.getCategoria());
         editValor.setText(String.valueOf(gasto.getValor()));
     }
 
-    private void carregaSpinner(){
+    private void carregaSpinner(EditGasto activity){
+
+        spinnerCategoria = activity.findViewById(R.id.spinner_Editcategoria);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource
                 (this.activity,R.array.lista_categoria,
                         android.R.layout.simple_spinner_item);
         spinnerCategoria.setAdapter(adapter);
     }
+
+    private void carregaSpinner(CadGasto activity){
+        spinnerCategoria = activity.findViewById(R.id.spinner_Cadcategoria);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource
+                (this.activity,R.array.lista_categoria,
+                        android.R.layout.simple_spinner_item);
+        spinnerCategoria.setAdapter(adapter);
+    }
+
 
 }

@@ -34,7 +34,7 @@ public class EditGasto extends AppCompatActivity {
         gastoDAO = new GastoDAO(this);
 
         Intent intent = getIntent();
-        Gasto gasto = (Gasto) intent.getSerializableExtra(GastoAdapter.MAIN_GASTO);
+        Gasto gasto = (Gasto) intent.getSerializableExtra(GastoAdapter.EDIT_GASTO);
         helper.carregaCampos(gasto);
 
 
