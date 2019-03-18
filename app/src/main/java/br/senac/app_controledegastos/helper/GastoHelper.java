@@ -61,26 +61,25 @@ public class GastoHelper {
         editData.setText(gasto.getData());
         editDescricao.setText(gasto.getDescricao());
 //        spinnerCategoria.setText(gasto.getCategoria());
-        editValor.setText(String.valueOf(gasto.getValor()));
+       editValor.setText(String.valueOf(gasto.getValor()));
     }
 
     private void carregaSpinner(EditGasto activity){
-
         spinnerCategoria = activity.findViewById(R.id.spinner_Editcategoria);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource
-                (this.activity,R.array.lista_categoria,
-                        android.R.layout.simple_spinner_item);
-        spinnerCategoria.setAdapter(adapter);
+                (activity,R.array.lista_categoria,android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spinnerCategoria.setAdapter(adapter);
     }
 
     private void carregaSpinner(CadGasto activity){
         spinnerCategoria = activity.findViewById(R.id.spinner_Cadcategoria);
-
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource
-                (this.activity,R.array.lista_categoria,
-                        android.R.layout.simple_spinner_item);
-        spinnerCategoria.setAdapter(adapter);
+                (activity,R.array.lista_categoria,android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spinnerCategoria.setAdapter(adapter);
     }
+
 
 
 }

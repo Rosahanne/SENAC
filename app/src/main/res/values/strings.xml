@@ -20,9 +20,11 @@
     <string name="TextView_Valor" />
     <string-array name="lista_categoria">
         <item>Alimentação</item>
-        <item>Veículo</item>
+        <item>Educação</item>
         <item>Lazer</item>
         <item>Residência</item>
+        <item>Transporte</item>
+        <item>Veículo</item>
         <item>Vestuário</item>
     </string-array>
 
