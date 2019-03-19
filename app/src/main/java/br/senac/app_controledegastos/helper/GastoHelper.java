@@ -7,6 +7,10 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.List;
+
 import br.senac.app_controledegastos.CadGasto;
 import br.senac.app_controledegastos.EditGasto;
 import br.senac.app_controledegastos.Model.Gasto;
@@ -23,6 +27,7 @@ public class GastoHelper {
     private Context activity;
 
     public GastoHelper(CadGasto activity) {
+        this.activity = activity;
         carregaCampos(activity);
         carregaSpinner(activity);
     }
@@ -58,10 +63,11 @@ public class GastoHelper {
     }
 
 
-    public void carregaCampos(Gasto gasto){
+    public void preencheFormulario(Gasto gasto){
         this.gasto = gasto;
         editData.setText(gasto.getData());
         editDescricao.setText(gasto.getDescricao());
+        spinnerCategoria.setSelection(pegaIndexdaCategoria(gasto.getCategoria()));
         editValor.setText(String.valueOf(gasto.getValor()));
     }
 
@@ -69,7 +75,6 @@ public class GastoHelper {
         spinnerCategoria = activity.findViewById(R.id.spinner_Editcategoria);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource
                 (activity,R.array.lista_categoria,android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinnerCategoria.setAdapter(adapter);
     }
 
@@ -77,10 +82,13 @@ public class GastoHelper {
         spinnerCategoria = activity.findViewById(R.id.spinner_Cadcategoria);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource
                 (activity,R.array.lista_categoria,android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinnerCategoria.setAdapter(adapter);
     }
 
-
+    private int pegaIndexdaCategoria(String categoria){
+        String [] arrayCategoria =  activity.getResources().getStringArray(R.array.lista_categoria);
+        List<String> categoriaList = Arrays.asList(arrayCategoria);
+        return  ((List) categoriaList).indexOf(categoria);
+    }
 
 }

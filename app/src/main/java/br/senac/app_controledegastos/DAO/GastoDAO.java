@@ -51,10 +51,10 @@ public class GastoDAO extends SQLiteOpenHelper {
 
     public List<Gasto> listaTodosGastos() {
         SQLiteDatabase db = getReadableDatabase();
+        List<Gasto> listaGastos = new ArrayList<>();
+
         String sql = "SELECT 'idGasto', * FROM Gasto";
         Cursor cursor = db.rawQuery(sql, null);
-
-        List<Gasto> listaGastos = new ArrayList<>();
 
         while (cursor.moveToNext()) {
             long idGasto = cursor.getLong(cursor.getColumnIndex("idGasto"));
@@ -68,6 +68,10 @@ public class GastoDAO extends SQLiteOpenHelper {
         }
         return listaGastos;
     }
+
+//    public double getValorTotaldeGastos(){
+//
+//    }
 
     public int editar(Gasto gasto) {
         SQLiteDatabase db = getWritableDatabase();

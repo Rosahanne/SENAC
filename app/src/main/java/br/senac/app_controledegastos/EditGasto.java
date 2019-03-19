@@ -32,8 +32,7 @@ public class EditGasto extends AppCompatActivity {
 
         Intent intent = getIntent();
         Gasto gasto = (Gasto) intent.getSerializableExtra(GastoAdapter.EDIT_GASTO);
-        helper.carregaCampos(gasto);
-
+        helper.preencheFormulario(gasto);
 
         btnEditar.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,6 +1,7 @@
 package br.senac.app_controledegastos.adapters;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.view.View;
@@ -60,7 +61,6 @@ public class GastoAdapter extends BaseAdapter {
         public View getView(final int position, View convertView, ViewGroup parent) {
             View view = act.getLayoutInflater()
                     .inflate(R.layout.list_gastos_personalizada, parent, false);
-            Gasto gasto = gastoList.get(position);
             gastoDAO = new GastoDAO(act);
 
             TextView data = (TextView)
@@ -75,19 +75,11 @@ public class GastoAdapter extends BaseAdapter {
             fabExcGasto = view.findViewById(R.id.list_ExcGasto);
             fabEditGasto = view.findViewById(R.id.list_EditGasto);
 
+            final Gasto gasto = gastoList.get(position);
             data.setText(gasto.getData());
-            categoria.setText(gasto.getCategoria());
             descricao.setText(gasto.getDescricao());
+            categoria.setText(gasto.getCategoria());
             valor.setText(String.valueOf(gasto.getValor()));
-
-
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(act, CadGasto.class);
-                    act.startActivity(intent);
-                }
-            });
 
 
             view.setOnClickListener(new View.OnClickListener() {
@@ -113,16 +105,14 @@ public class GastoAdapter extends BaseAdapter {
             fabExcGasto.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (gastoDAO.deletar(getItemId(position)) == LINHA_AFETADA) {
+                     if (gastoDAO.deletar(getItemId(position)) == LINHA_AFETADA) {
                         Toast.makeText(act,"Funcionou!", Toast.LENGTH_LONG).show();
-
-                    } else {
+                        
+                     } else {
                         Toast.makeText(act,"Não funcionou!", Toast.LENGTH_LONG).show();
                     }
                 }
             });
-
-
                return view;
         }
 
