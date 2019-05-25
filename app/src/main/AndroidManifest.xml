@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.senac.app_controledegastos">
+    package="br.devmobile_control">
 
     <application
         android:allowBackup="true"

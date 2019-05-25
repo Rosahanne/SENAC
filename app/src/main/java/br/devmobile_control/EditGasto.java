@@ -1,4 +1,4 @@
-package br.senac.app_controledegastos;
+package br.devmobile_control;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,10 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-import br.senac.app_controledegastos.DAO.GastoDAO;
-import br.senac.app_controledegastos.Model.Gasto;
-import br.senac.app_controledegastos.adapters.GastoAdapter;
-import br.senac.app_controledegastos.helper.GastoHelper;
+import br.devmobile_control.DAO.GastoDAO;
+import br.devmobile_control.Model.Gasto;
+import br.devmobile_control.adapters.GastoAdapter;
+import br.devmobile_control.helper.GastoHelper;
 
 public class EditGasto extends AppCompatActivity {
 

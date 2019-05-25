@@ -1,4 +1,4 @@
-package br.senac.app_controledegastos;
+package br.devmobile_control;
 
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
@@ -9,9 +9,9 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 import java.util.List;
-import br.senac.app_controledegastos.DAO.GastoDAO;
-import br.senac.app_controledegastos.Model.Gasto;
-import br.senac.app_controledegastos.adapters.GastoAdapter;
+import br.devmobile_control.DAO.GastoDAO;
+import br.devmobile_control.Model.Gasto;
+import br.devmobile_control.adapters.GastoAdapter;
 
 
 

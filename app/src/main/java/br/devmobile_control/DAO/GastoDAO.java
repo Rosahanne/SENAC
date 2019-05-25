@@ -1,4 +1,4 @@
-package br.senac.app_controledegastos.DAO;
+package br.devmobile_control.DAO;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,8 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.List;
-
-import br.senac.app_controledegastos.Model.Gasto;
+import br.devmobile_control.Model.Gasto;
 
 public class GastoDAO extends SQLiteOpenHelper {
 

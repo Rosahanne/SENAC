@@ -1,4 +1,4 @@
-package br.senac.app_controledegastos.adapters;
+package br.devmobile_control.adapters;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -12,12 +12,12 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import br.senac.app_controledegastos.CadGasto;
-import br.senac.app_controledegastos.DAO.GastoDAO;
-import br.senac.app_controledegastos.EditGasto;
-import br.senac.app_controledegastos.MainActivity;
-import br.senac.app_controledegastos.Model.Gasto;
-import br.senac.app_controledegastos.R;
+import br.devmobile_control.CadGasto;
+import br.devmobile_control.DAO.GastoDAO;
+import br.devmobile_control.EditGasto;
+import br.devmobile_control.MainActivity;
+import br.devmobile_control.Model.Gasto;
+import br.devmobile_control.R;
 
 
 

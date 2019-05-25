@@ -1,4 +1,4 @@
-package br.senac.app_controledegastos.helper;
+package br.devmobile_control.helper;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,10 +11,10 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 
-import br.senac.app_controledegastos.CadGasto;
-import br.senac.app_controledegastos.EditGasto;
-import br.senac.app_controledegastos.Model.Gasto;
-import br.senac.app_controledegastos.R;
+import br.devmobile_control.CadGasto;
+import br.devmobile_control.EditGasto;
+import br.devmobile_control.Model.Gasto;
+import br.devmobile_control.R;
 
 public class GastoHelper {
 

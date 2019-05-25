@@ -1,8 +1,6 @@
-package br.senac.app_controledegastos.Model;
-
+package br.devmobile_control.Model;
 import java.io.Serializable;
-
-import br.senac.app_controledegastos.adapters.GastoAdapter;
+import br.devmobile_control.adapters.GastoAdapter;
 
 public class Gasto implements Serializable {
 
