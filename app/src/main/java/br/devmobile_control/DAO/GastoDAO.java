@@ -16,7 +16,7 @@ public class GastoDAO extends SQLiteOpenHelper {
         super(context, "ContoleCustos", null, 1);
     }
 
-    // chamado quendo o BD é criado pela primeira vez
+    // chamado quando o BD é criado pela primeira vez ATENÇÃO na prova
     @Override
     public void onCreate(SQLiteDatabase db) {
         String sql = "create table Gasto(" +
@@ -67,10 +67,6 @@ public class GastoDAO extends SQLiteOpenHelper {
         }
         return listaGastos;
     }
-
-//    public double getValorTotaldeGastos(){
-//
-//    }
 
     public int editar(Gasto gasto) {
         SQLiteDatabase db = getWritableDatabase();

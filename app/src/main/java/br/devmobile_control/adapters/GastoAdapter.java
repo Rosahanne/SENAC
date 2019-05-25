@@ -82,15 +82,15 @@ public class GastoAdapter extends BaseAdapter {
             valor.setText(String.valueOf(gasto.getValor()));
 
 
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent =  new Intent(act, EditGasto.class);
-                    intent.putExtra("EditarDado", gastoList.get(position));
-                    act.startActivity(intent);
-
-                }
-            });
+//            view.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Intent intent =  new Intent(act, EditGasto.class);
+//                    intent.putExtra("EditarDado", gastoList.get(position));
+//                    act.startActivity(intent);
+//
+//                }
+//            });
 
             fabEditGasto.setOnClickListener(new View.OnClickListener() {
                 @Override

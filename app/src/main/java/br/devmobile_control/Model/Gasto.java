@@ -27,15 +27,14 @@ public class Gasto implements Serializable {
         GASTO_TOTAL += valor;
     }
 
-    public Gasto(GastoAdapter gastoAdapter) {
-    }
+
 
     @Override
     public String toString() {
         return ("Data: " + data + "\n" +
                 "Descrição: " + descricao + "\n" +
                 "Categoria: " + categoria + "\n" +
-                "Valor: " + valor);
+                "Valor: " + valor + "," + valor);
     }
 
     public long getIdGasto() {
